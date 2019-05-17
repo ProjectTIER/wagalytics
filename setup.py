@@ -5,11 +5,11 @@ from wagtail.utils.setup import sdist
 from wagalytics import __version__
 
 setup(
-    name='wagalytics',
+    name='wagalytics-tier',
     version=__version__,
     description='Show Google Analytics data in Wagtail.',
-    long_description='See https://github.com/tomdyson/wagalytics for details',
-    url='https://github.com/tomdyson/wagalytics',
+    long_description='Fork of: https://github.com/tomdyson/wagalytics',
+    url='https://github.com/ProjectTIER/wagalytics',
     author='Tom Dyson',
     author_email='tom+wagalytics@torchbox.com',
     license='MIT',
