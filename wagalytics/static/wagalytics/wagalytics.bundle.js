@@ -260,7 +260,7 @@
 	                'metrics': 'ga:pageviews',
 	                'dimensions': 'ga:hostname,ga:pagePath',
 	                'sort': '-ga:pageviews',
-	                'max-results': 25
+	                'max-results': 500
 	            };
 	            this.getQuery(queryData).then(function (results) {
 	
@@ -309,7 +309,7 @@
 	                'metrics': 'ga:pageviews',
 	                'dimensions': 'ga:fullReferrer',
 	                'sort': '-ga:pageviews',
-	                'max-results': 25
+	                'max-results': 500
 	            };
 	
 	            this.getQuery(queryData).then(function (results) {
