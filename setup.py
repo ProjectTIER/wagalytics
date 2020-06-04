@@ -1,8 +1,24 @@
 from os import path
 
 from setuptools import setup, find_packages
-from wagtail.utils.setup import sdist
+
+try:
+    from wagtail.utils.setup import sdist
+    cmdclass = {
+        'sdist': sdist
+    }
+except ModuleNotFoundError:
+    cmdclass = {}
+
 from wagalytics import __version__
+
+
+testing_extras = [
+    'pytest==5.3.1',
+    'pytest-django==3.7.0',
+    'wagtail-factories==2.0.0',
+    'factory-boy==2.11.0',
+]
 
 setup(
     name='wagalytics-tier',
@@ -27,14 +43,14 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        "wagtail>=0.8.7",
-        "Django>=1.7.1",
-        "google-api-python-client==1.5.5",
-        "oauth2client<3,>=2.0.0",
-        "wagtailfontawesome>=1.0.2",
+        "wagtail>=2.0",
+        "Django>=2.0.13",
+        "oauth2client",
+        "wagtailfontawesome>=1.1.2",
         "pyexcel-ods==0.5.3"
     ],
-    cmdclass={
-        'sdist': sdist
-    }
+    cmdclass=cmdclass,
+    extras_require={
+        'testing': testing_extras,
+    },
 )
