@@ -167,7 +167,7 @@ class Dashboard {
     }
 
     /**
-     * Create table showing 25 most popular pages
+     * Create table showing 500 most popular pages
      */
     popularPagesTable() {
         const id = 'popular-pages-table-container';
@@ -176,7 +176,7 @@ class Dashboard {
             'metrics': 'ga:pageviews',
             'dimensions': 'ga:hostname,ga:pagePath',
             'sort': '-ga:pageviews',
-            'max-results': 25
+            'max-results': 500
         };
         this.getQuery(queryData).then(results => {
 
@@ -212,7 +212,7 @@ class Dashboard {
     }
 
     /**
-     * Create table showing 25 top referrers
+     * Create table showing 500 top referrers
      */
     topReferrersTable() {
         const id = 'top-referrers-table-container';
@@ -221,7 +221,7 @@ class Dashboard {
             'metrics': 'ga:pageviews',
             'dimensions': 'ga:fullReferrer',
             'sort': '-ga:pageviews',
-            'max-results': 25
+            'max-results': 500
         };
 
         this.getQuery(queryData).then(results => {
